@@ -1,0 +1,35 @@
+;~ **************************************************
+;~
+;~                    KOTEK
+;~
+;~ **************************************************
+HotKeySet("{End}", "TogglePause")
+HotKeySet("{ESC}", "Terminate")
+
+Global $Paused, $WinTitle ='Droid4X 0.8.5 Beta'
+TogglePause()
+
+While 1
+	If WinExists($WinTitle) Then
+			ControlSend($WinTitle, "", "", "1", 1)
+				Sleep(17000)
+			ControlSend($WinTitle, "", "", "1", 1)
+				Sleep(17000)
+	Else
+		MsgBox(0, "No Droid4X!!", "Can't find Droid4X Window!"&@CRLF&"Launch the Emulator before the bot."&@CRLF&""&@CRLF&"Bot will close now.", "", "")
+		Exit
+	EndIf
+WEnd
+
+Func TogglePause()
+    $Paused = NOT $Paused
+    While $Paused
+        sleep(100)
+        ToolTip('Droid4X Bot Paused! (End = Enable - Esc = Exit)',0,0)
+    WEnd
+    ToolTip("")
+EndFunc
+
+Func Terminate()
+    Exit 0
+EndFunc
