@@ -6,17 +6,27 @@
 HotKeySet("{End}", "TogglePause")
 HotKeySet("{ESC}", "Terminate")
 
-Global $Paused, $WinTitle ='Droid4X 0.8.5 Beta'
+Global $Paused, $WinTitle ='The Secret World'
 TogglePause()
 
 While 1
 	If WinExists($WinTitle) Then
+			ControlSend($WinTitle, "", "", "6", 1)
+				Sleep(2)
+			ControlSend($WinTitle, "", "", "7", 1)
+				Sleep(2)
+			ControlSend($WinTitle, "", "", "3", 1)
+				Sleep(2)
+			ControlSend($WinTitle, "", "", "4", 1)
+				Sleep(2)
+			ControlSend($WinTitle, "", "", "5", 1)
+				Sleep(2)
+			ControlSend($WinTitle, "", "", "2", 1)
+				Sleep(2)a
 			ControlSend($WinTitle, "", "", "1", 1)
-				Sleep(17000)
-			ControlSend($WinTitle, "", "", "1", 1)
-				Sleep(17000)
+				Sleep(2)
 	Else
-		MsgBox(0, "No Droid4X!!", "Can't find Droid4X Window!"&@CRLF&"Launch the Emulator before the bot."&@CRLF&""&@CRLF&"Bot will close now.", "", "")
+		MsgBox(0, "No The Secret World!!", "Can't find The Secret World Window!"&@CRLF&"Launch the The Secret World before the bot."&@CRLF&""&@CRLF&"Bot will close now.", "", "")
 		Exit
 	EndIf
 WEnd
@@ -25,7 +35,7 @@ Func TogglePause()
     $Paused = NOT $Paused
     While $Paused
         sleep(100)
-        ToolTip('Droid4X Bot Paused! (End = Enable - Esc = Exit)',0,0)
+        ToolTip('TSW Bot Paused! (End = Enable - Esc = Exit)',0,0)
     WEnd
     ToolTip("")
 EndFunc
